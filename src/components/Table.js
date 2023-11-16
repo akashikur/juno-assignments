@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../style/table.css";
 import data from "../data";
+import link from "../images/external-link.png";
 const Table = ({ status, search, level }) => {
   const [datas, setDatas] = useState([]);
 
@@ -42,13 +43,23 @@ const Table = ({ status, search, level }) => {
         item.status === "completed" ? (
           <tr>
             <td>
-              <div>
-                <h4>{item.name}</h4>
-                <p
-                  style={{ color: "rgba(119, 118, 118, 1)", fontWeight: "500" }}
-                >
-                  {item.email}
-                </p>
+              <div className="user-link">
+                <div>
+                  <h4>{item.name}</h4>
+                  <p
+                    style={{
+                      color: "rgba(119, 118, 118, 1)",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {item.email}
+                  </p>
+                </div>
+                <img
+                  src={link}
+                  alt="external link"
+                  style={{ cursor: "pointer" }}
+                />
               </div>
             </td>
             <td
@@ -82,13 +93,23 @@ const Table = ({ status, search, level }) => {
         ) : (
           <tr>
             <td>
-              <div>
-                <h4>{item.name}</h4>
-                <p
-                  style={{ color: "rgba(119, 118, 118, 1)", fontWeight: "500" }}
-                >
-                  {item.email}
-                </p>
+              <div className="user-link">
+                <div>
+                  <h4>{item.name}</h4>
+                  <p
+                    style={{
+                      color: "rgba(119, 118, 118, 1)",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {item.email}
+                  </p>
+                </div>
+                <img
+                  src={link}
+                  alt="external link"
+                  style={{ cursor: "pointer" }}
+                />
               </div>
             </td>
             <td

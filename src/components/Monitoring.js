@@ -44,15 +44,18 @@ const Monitoring = () => {
           <span class="material-symbols-outlined">search</span>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
         <select>
-          <option>Trigger reason</option>
+          <option disabled>Trigger reason</option>
           <option>Hard flag</option>
           <option>Temp flag</option>
+          <option>Restricted unflag</option>
+          <option>Un flag</option>
+          <option>Reviewed</option>
         </select>
         <select onChange={(e) => setLevel(e.target.value)} value={level}>
           <option value="">Risk level</option>
