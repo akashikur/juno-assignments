@@ -9,15 +9,16 @@ table {
 th {
   text-align: left;
   color: rgba(5, 5, 5, 1);
-  font-size: 12px;
+  font-size: 13px;
 }
 tr {
   height: 48px;
 }
 td {
   height: 72px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
+  line-height: 18px;
 }
 
 .headers {
@@ -71,4 +72,8 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.sort {
+  display: flex;
+  justify-content: space-between;
 }

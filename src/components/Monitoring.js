@@ -2,11 +2,24 @@ import React, { useState } from "react";
 import "../style/monitoring.css";
 import Table from "./Table";
 import ClosingAcc from "./ClosingAcc";
+import Droupdown from "./Droupdown";
 const Monitoring = () => {
   const [status, setStatus] = useState("pending");
   const [search, setSearch] = useState("");
   const [level, setLevel] = useState("");
   const [close, setClose] = useState(false);
+  const [trigger, setTrigger] = useState("");
+
+  const Trigger_reason = [
+    "Trigger reason",
+    "Hard flag",
+    "Temp flag",
+    "Restricted unflag",
+    "Un flag",
+    "Reviewed",
+  ];
+
+  const levelOption = ["All", "High", "Medium", "Low"];
 
   return (
     <div className="monitoring">
@@ -19,6 +32,7 @@ const Monitoring = () => {
               setStatus("pending");
               setSearch("");
               setLevel("");
+              setTrigger("");
             }}
           >
             Pending
@@ -29,6 +43,7 @@ const Monitoring = () => {
               setStatus("completed");
               setSearch("");
               setLevel("");
+              setTrigger("");
             }}
           >
             completed
@@ -49,20 +64,18 @@ const Monitoring = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <select>
-          <option disabled>Trigger reason</option>
-          <option>Hard flag</option>
-          <option>Temp flag</option>
-          <option>Restricted unflag</option>
-          <option>Un flag</option>
-          <option>Reviewed</option>
-        </select>
-        <select onChange={(e) => setLevel(e.target.value)} value={level}>
-          <option value="">Risk level</option>
-          <option value="High">high</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-        </select>
+        <Droupdown
+          options={Trigger_reason}
+          title="Trigger reason"
+          trigger={trigger}
+          setTrigger={setTrigger}
+        />
+        <Droupdown
+          options={levelOption}
+          title="Risk level"
+          setLevel={setLevel}
+          level={level}
+        />
       </div>
       <div className="table">
         <Table status={status} search={search} level={level} />

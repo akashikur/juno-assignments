@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../style/table.css";
 import data from "../data";
 import link from "../images/external-link.png";
+import updo from "../images/chevrons-up-down.png";
 const Table = ({ status, search, level }) => {
   const [datas, setDatas] = useState([]);
 
@@ -23,19 +24,49 @@ const Table = ({ status, search, level }) => {
       {status === "completed" ? (
         <tr className="headers">
           <th style={{ width: "255px" }}>User</th>
-          <th style={{ width: "149px" }}>Risk level</th>
+          <th style={{ width: "149px" }}>
+            <div className="sort">
+              <p>Risk level</p>
+              <img src={updo} alt="updown" />
+            </div>
+          </th>
           <th style={{ width: "164px" }}>Action reason</th>
-          <th style={{ width: "155px" }}>Time to close</th>
-          <th style={{ width: "170px" }}>Date added on</th>
+          <th style={{ width: "155px" }}>
+            <div className="sort">
+              <p>Time to close</p>
+              <img src={updo} alt="updown" />
+            </div>
+          </th>
+          <th style={{ width: "170px" }}>
+            <div className="sort">
+              <p>Date added on</p>
+              <img src={updo} alt="updown" />
+            </div>
+          </th>
           <th style={{ width: "181.5px" }}>Action taken by</th>
         </tr>
       ) : (
         <tr className="headers">
           <th style={{ width: "255px" }}>User</th>
-          <th style={{ width: "149px" }}>Risk level</th>
+          <th style={{ width: "149px" }}>
+            <div className="sort">
+              <p>Risk level</p>
+              <img src={updo} alt="updown" />
+            </div>
+          </th>
           <th style={{ width: "164px" }}>Trigger reason</th>
-          <th style={{ width: "155px" }}>In queue for</th>
-          <th style={{ width: "170px" }}>Date added on</th>
+          <th style={{ width: "155px" }}>
+            <div className="sort">
+              <p>In queue for</p>
+              <img src={updo} alt="updown" />
+            </div>
+          </th>
+          <th style={{ width: "170px" }}>
+            <div className="sort">
+              <p>Date added on</p>
+              <img src={updo} alt="updown" />
+            </div>
+          </th>
           <th style={{ width: "181.5px" }}>Previously reviewed</th>
         </tr>
       )}
